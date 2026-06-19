@@ -1,60 +1,90 @@
-# Movies and Reviews
+# Movies & Reviews (Laravel App)
 
->Terminal commands:
+A full-stack Laravel application for browsing movies and writing reviews.  
+Users can register, log in, and manage their own movie reviews, while admins have full control over users and content.
 
-1. git clone https://github.com/DinoDj123/filmovi-i-recenzije.git
+**Live Demo:** https://filmovi-i-recenzije-production.up.railway.app
 
-2. cd filmovi-i-recenzije
+---
 
-3. composer install
+## Tech Stack
 
-4. npm install
+- Laravel (PHP)
+- Blade / Tailwind CSS
+- MySQL (or any Laravel-supported DB)
+- Vite (frontend assets)
+- Laravel Auth system
 
-5. cp .env.example .env (edit the env file if needed)
+---
 
-6. php artisan key:generate
+## Features
 
-7. php artisan migrate --seed
+### User Features
+- User registration and authentication
+- Create, edit, and delete personal movie reviews
+- Public movie listing with pagination (4 movies per page)
+- Detailed movie view page
+- Profile management (name, bio, profile picture upload)
 
-8. php artisan storage:link
+### Movie System
+- Movie catalog with posters and details
+- Individual movie pages with user reviews
+- Image upload support for posters and avatars
 
-9. npm run dev
+### Admin Panel
+- Manage all user reviews (edit/delete)
+- Delete users (their reviews are reassigned to Super Admin)
+- View all registered users
+- Full moderation control over content
 
-10. php artisan serve / php 127.0.0.1:8000 -t public (in a new terminal)
+---
 
->Features
+## Installation
 
-- User registration and login
+```bash
+git clone https://github.com/DinoDj123/filmovi-i-recenzije.git
 
-- Adding, editing, and deleting personal movie reviews
+cd filmovi-i-recenzije
 
-- Profile editing (name, description, profile picture)
+composer install
 
-- Public movie list with pagination (4 per page)
+npm install
 
-- Detailed movie view
+cp .env.example .env
+# configure your DB and environment variables
 
->Admin panel:
+php artisan key:generate
 
-- Edit and delete any review
+php artisan migrate --seed
 
-- Delete users (all their reviews get reassigned to the Super Admin)
+php artisan storage:link
 
-- User list
+npm run dev
 
->Admin
-- After seeding and migration, login as admin:
+php artisan serve
+```
+App will be available at:
 
-Name: admin
+http://127.0.0.1:8000
 
-Email: admin@gmail.com
+After running migrations and seeders:
 
-Password: admin123
+- Email: admin@gmail.com
+- Password: admin123
+## Storage Structure
+- Movie posters: storage/app/public/posters
+- User avatars: storage/app/public/avatars
+- Default images included:
+- default.jpg
+- defaultAvatar.jpg
 
->Images:
+## Project Purpose
 
-- Initially, there are 2 default images: default.jpg and defaultAvatar.jpg
+This project was built as a practical learning application to demonstrate:
 
-Movie posters: /storage/app/public/posters
-
-User avatars: /storage/app/public/avatars
+- Full-stack Laravel development
+- Authentication & authorization (roles: user/admin)
+- CRUD operations with relational data
+- File uploads and storage handling
+- Clean UI with responsive design
+- Basic admin moderation system
